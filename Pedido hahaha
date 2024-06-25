@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #btnNao {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cuzinho sábado agora?</h1>
+        <div class="buttons">
+            <button class="button" id="btnSim">Sim</button>
+            <button class="button" id="btnNao">Não</button>
+        </div>
+    </div>
+
+    <script>
+        const btnNao = document.getElementById('btnNao');
+        const btnSim = document.getElementById('btnSim');
+
+        btnNao.addEventListener('mouseover', () => {
+            const x = Math.random() > 0.5 ? 0 : window.innerWidth - btnNao.clientWidth;
+            const y = Math.random() > 0.5 ? 0 : window.innerHeight - btnNao.clientHeight;
+            btnNao.style.left = `${x}px`;
+            btnNao.style.top = `${y}px`;
+        });
+
+        btnSim.addEventListener('click', () => {
+            window.open('https://www.youtube.com/watch?v=gnl-DiE3_gw', '_blank');
+        });
+    </script>
+</body>
+</html>
